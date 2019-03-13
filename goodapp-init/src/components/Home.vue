@@ -9,10 +9,10 @@
             <grid-item :label="('书')" >
         <img slot="icon" src="../assets/heart.png">
       </grid-item>
-            <grid-item :label="('书')" >
+            <grid-item :label="('图书')" >
         <img slot="icon" src="../assets/heart.png">
       </grid-item>
-            <grid-item :label="('书')" >
+            <grid-item :label="('小说')" >
         <img slot="icon" src="../assets/heart.png">
       </grid-item>
             <grid-item :label="('书')" >
