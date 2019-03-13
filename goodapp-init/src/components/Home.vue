@@ -1,9 +1,30 @@
 <template>
   <div class="container">
-    <x-header :right-options="{showMore: true}" :left-options="{showBack: false}">我爱读书</x-header>
+    <x-header @on-click-title="go" :right-options="{showMore: true}" :left-options="{showBack: false}">灵魂的洗涤</x-header>
     <swiper loop auto :list="img_list" :index="img_index"></swiper>
     <grid :cols="4" :show-lr-borders="false">
-      <grid-item :label="('Grid')" v-for="i in 8" :key="i">
+      <grid-item :label="('书')" >
+        <img slot="icon" src="../assets/heart.png">
+      </grid-item>
+            <grid-item :label="('书')" >
+        <img slot="icon" src="../assets/heart.png">
+      </grid-item>
+            <grid-item :label="('书')" >
+        <img slot="icon" src="../assets/heart.png">
+      </grid-item>
+            <grid-item :label="('书')" >
+        <img slot="icon" src="../assets/heart.png">
+      </grid-item>
+            <grid-item :label="('书')" >
+        <img slot="icon" src="../assets/heart.png">
+      </grid-item>
+            <grid-item :label="('书')" >
+        <img slot="icon" src="../assets/heart.png">
+      </grid-item>
+            <grid-item :label="('书')" >
+        <img slot="icon" src="../assets/heart.png">
+      </grid-item>
+            <grid-item :label="('书')" >
         <img slot="icon" src="../assets/heart.png">
       </grid-item>
     </grid>
@@ -14,15 +35,15 @@
         <span slot="label">首页</span>
       </tabbar-item>
       <tabbar-item show-dot>
-        <img slot="icon" src="../assets/logo.png">
+        <img slot="icon" src="../assets/heart.png">
         <span slot="label">书籍</span>
       </tabbar-item>
       <tabbar-item selected link="/component/demo">
-        <img slot="icon" src="../assets/space.png">
+        <img slot="icon" src="../assets/heart.png">
         <span slot="label">附近</span>
       </tabbar-item>
       <tabbar-item badge="2">
-        <img slot="icon" src="../assets/manage.png">
+        <img slot="icon" src="../assets/heart.png">
         <span slot="label">我的</span>
       </tabbar-item>
     </tabbar>
@@ -70,7 +91,6 @@ export default {
     return {
       img_list: urlList,
       img_index: 0,
-      msg: 'Hello World!',
       type: '1',
       list: [{
         src: 'http://www.zhantengwang.com/uploads/allimg/181016/1-1Q016144920196.jpg',
@@ -108,6 +128,11 @@ export default {
         title: '更多',
         url: 'http://vux.li'
       }
+    }
+  },
+  methods: {
+    go () {
+      this.$router.push('/login')
     }
   }
 }
