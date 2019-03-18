@@ -52,6 +52,7 @@
 
 <script>
 import { Tabbar, TabbarItem, Group, Cell, XHeader, Grid, GridItem, Swiper, Panel } from 'vux'
+import { create } from 'domain';
 
 const baseList = [{
   url: 'javascript:',
@@ -86,8 +87,6 @@ export default {
     Grid,
     GridItem,
     Swiper
-  },
-  created () {
   },
   data () {
     return {
@@ -137,8 +136,19 @@ export default {
       this.$router.push('/login')     
     }
   },
-  created(){
-    
+  created () {
+    let _this = this
+    this.$http.post('https://api.apiopen.top/getJoke').then(({data}) => {
+      var new_data = data.result.map((item, index) => ({
+        src: item.header,
+        fallbackSrc: item.header,
+        title: item.name,
+        desc: item.text
+      }))
+      console.log(new_data)
+      _this.list = new_data
+    })
+
   }
 }
 </script>
