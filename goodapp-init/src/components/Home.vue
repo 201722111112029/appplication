@@ -87,6 +87,8 @@ export default {
     GridItem,
     Swiper
   },
+  created () {
+  },
   data () {
     return {
       img_list: urlList,
@@ -132,8 +134,11 @@ export default {
   },
   methods: {
     go () {
-      this.$router.push('/login')
+      this.$router.push('/login')     
     }
+  },
+  created(){
+    
   }
 }
 </script>
