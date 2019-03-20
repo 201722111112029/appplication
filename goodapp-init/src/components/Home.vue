@@ -138,12 +138,11 @@ export default {
   },
   created () {
     let _this = this
-    this.$http.post('https://api.apiopen.top/getJoke').then(({data}) => {
-      var new_data = data.result.map((item, index) => ({
-        src: item.header,
-        fallbackSrc: item.header,
-        title: item.name,
-        desc: item.text
+    this.$http.get('http://localhost:3000/api/news').then(({data}) => {
+      var new_data = data.map((item, index) => ({
+        title: item.title,
+        src: item.src,
+        desc: item.content
       }))
       console.log(new_data)
       _this.list = new_data
